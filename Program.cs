@@ -39,6 +39,56 @@ class Calculadora
 
         return resultadoDiv;
     }
+    static void soma ()
+    {
+        Console.WriteLine("Digite o primeiro número:");
+        int num1soma = int.Parse(Console.ReadLine());
+        Console.WriteLine("Digite o segundo número:");
+        int num2soma = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Deseja somar mais algum número? (S/N)");
+        char decisao = char.Parse(Console.ReadLine());
+        int soma;
+        
+        if (decisao == 'S')
+        {
+            Console.WriteLine("Digite o número que deseja adicionar a soma:");
+            int num3soma = int.Parse(Console.ReadLine());
+            soma = (num1soma + num2soma + num3soma);
+            Console.WriteLine($"O resultado é {soma}");
+        }
+        
+        else if (decisao == 'N')
+        {
+            soma = (num1soma + num2soma);
+            Console.WriteLine($"O resultado é {soma}");
+        }
+    }
+
+    static void multi ()
+    {
+        Console.WriteLine("Digite o primeiro número:");
+        int num1mult = int.Parse(Console.ReadLine());
+        Console.WriteLine("Digite o segundo número:");
+        int num2mult = int.Parse(Console.ReadLine());
+        Console.WriteLine("Deseja multiplicar mais algum número? (S/N)");
+        char decisaomult = char.Parse(Console.ReadLine());
+        int mult;
+        
+        if (decisaomult =='S')
+        {
+            Console.WriteLine("Digite o número que deseja adicionar a multiplicação:");
+            int num3mult = int.Parse(Console.ReadLine());
+            mult = (num1mult * num2mult * num3mult);
+            Console.WriteLine($"O resultado é {mult}");
+        }
+        
+        else if(decisaomult == 'N')
+        {
+            mult = (num1mult*num2mult);
+            Console.WriteLine($"O resultado é {mult}");
+        }
+    }
 
     static void Main(string[] args)
     {
@@ -48,3 +98,4 @@ class Calculadora
         Console.WriteLine($"Resultado da subtração: {resultado2}");
     }
 }
+
