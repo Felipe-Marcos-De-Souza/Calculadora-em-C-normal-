@@ -142,4 +142,27 @@ class Calculadora
             Console.WriteLine($"O resultado é {mult}");
         }
     }
+
+    static void quadrada()
+    Console.WriteLine("===== RAIZ QUADRADA =====");
+    Console.Write("Digite um número: ");
+
+    if (double.TryParse(Console.ReadLine(), out double numero))
+    {
+        if (numero >= 0)
+        {
+            double raiz = Math.Sqrt(numero);
+            Console.WriteLine($"A raiz quadrada de {numero} é {raiz}");
+        }
+        else
+        {
+            Console.WriteLine("Erro: Não é possível calcular a raiz quadrada de número negativo.");
+        }
+    }
+        else
+        {
+            Console.WriteLine("Entrada inválida! Digite um número válido.");
+        }
+
 }
+
