@@ -2,7 +2,7 @@
 
 class Calculadora
 {
-    static void Main
+    static void Main(string[] args)
     {
         int opcao;
         do
@@ -142,14 +142,4 @@ class Calculadora
             Console.WriteLine($"O resultado é {mult}");
         }
     }
-
-    static void Main(string[] args)
-    {
-        int resultado1 = divisao();
-        int resultado2 = subtracao();
-        Console.WriteLine($"Resultado da divisão: {resultado1}");
-        Console.WriteLine($"Resultado da subtração: {resultado2}");
-    }
 }
-
-
