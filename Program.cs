@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 
 class Calculadora
@@ -20,6 +21,7 @@ class Calculadora
             Console.WriteLine("5- Raiz quadrada");
             Console.WriteLine("7- Ver histórico");
             Console.WriteLine("8- Apagar histórico");
+            Console.WriteLine("9 - Calcular expressão com parentesis");
             Console.WriteLine("6- Sair");
             Console.WriteLine("Escolha uma opção: ");
 
@@ -62,7 +64,11 @@ class Calculadora
                 case 8:
                     apagarHistorico();
                     break;
-
+                    
+                case 9:
+                    calcularExpressaoComParenteses();
+                    break;
+                    
                 default:
                     Console.WriteLine("Opção inválida, por favor digite outro número");
                     break;
@@ -220,4 +226,24 @@ class Calculadora
         historico.Clear();
         Console.WriteLine("Histórico apagado com sucesso!");
     }
+
+    static void calcularExpressaoComParenteses()
+    {
+        Console.WriteLine("===== EXPRESSÃO COM PARÊNTESES =====");
+        Console.Write("Digite a expressão (ex: (2+3)*4): ");
+        string expressao = Console.ReadLine();
+    
+        try
+        {
+            var resultado = new DataTable().Compute(expressao, null);
+            Console.WriteLine($"O resultado da expressão '{expressao}' é {resultado}");
+            historico.Add($"Expressão '{expressao}' = {resultado}");
+        }
+        catch
+        {
+            Console.WriteLine("Expressão inválida! Certifique-se de usar apenas números e operadores válidos.");
+        }
+    }
+
 }
+
